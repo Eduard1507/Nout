@@ -8,7 +8,7 @@ public class PhoneBook {
         // Получаем текущий список номеров для имени
         List<Integer> phones = phoneBook.getOrDefault(name, new ArrayList<>());
         // Добавляем новый номер телефона в список
-        phones.add(phoneNum);
+        phones.add(Integer.valueOf(phoneNum));
         // Обновляем запись в телефонной книге
         phoneBook.put(name, phones);
     }
@@ -44,9 +44,10 @@ public class PhoneBook {
         PhoneBook phoneBook = new PhoneBook();
 
         // Пример добавления записей в телефонную книгу
-        phoneBook.add("Alice", 123456);
-        phoneBook.add("Alice", 789012);
-        phoneBook.add("Bob", 789012);
+        phoneBook.add("Aleks", 89201234561);
+        phoneBook.add("Nina", 89002789012);
+        phoneBook.add("Pit", 89103458761);
+        phoneBook.add("Leo", 89302763412);
 
         // Выводим телефонную книгу
         System.out.println("Phone book:");
@@ -55,13 +56,13 @@ public class PhoneBook {
         }
 
         // Пример поиска по имени
-        System.out.println("\nFind Alice:");
-        List<Integer> alicePhones = phoneBook.find("Alice");
+        System.out.println("\nFind Aleks:");
+        List<Integer> alicePhones = phoneBook.find("Aleks");
         System.out.println(alicePhones);
 
         // Пример поиска по несуществующему имени
-        System.out.println("\nFind John:");
-        List<Integer> johnPhones = phoneBook.find("John");
+        System.out.println("\nFind Pit:");
+        List<Integer> johnPhones = phoneBook.find("Pit");
         System.out.println(johnPhones);
     }
 }
